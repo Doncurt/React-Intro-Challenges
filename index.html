@@ -48,7 +48,10 @@
         }
         // --------------------------------
 
+
+
       // --------------------------------
+      // CHALLENGE 1 COMPLETED
       // Title and  Sub- Title Challenge 1
       function TimerTitle(props){
         return <h1>{props.title}</h1>;
@@ -64,6 +67,52 @@
           </div>
         );
       }
+
+        //-------------------------------
+        //CHALLENGE 2
+        //Make a list of users. Define an array of objects with a name, team, and id.
+        //
+        //-------------------------------
+        const users = [
+          {
+            name:"Curt",
+            team:"Blue",
+            id: 1
+          },
+          {
+            name:"Damien",
+            team:"Red",
+            id: 2
+          },
+          {
+            name:"Mary",
+            team:"Green",
+            id: 3
+          }
+        ]
+
+        function UserList(props) {
+            const users = props.users;
+            const listUserInfo = users.map((user) =>
+            <div>
+            <p>user.id</p>
+            <h2>user.name</h2>
+            <p>user.team</p>
+            </div>
+
+
+            );
+            return (
+              <div>
+              {listUserInfo}
+              </div>
+            );
+          }
+
+        //----------------------------------
+
+
+
 
 
         // --------------------------------
@@ -165,6 +214,7 @@
                 <Clock />
                 <List items={things} />
                 <Heading />
+                <UserList users = {users}/>
             </div>,
             document.getElementById('app')
         );
